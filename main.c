@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctype.h>
+#include <inttypes.h>
 #include "ismaelspallettafunciones.h"
 
 
@@ -80,7 +81,13 @@ int main()
                 printf("El resultado de A/B es: %.2f\n",calcularDivision(primerOperador,segundoOperador));
             }
             printf("El resultado de A*B es: %d\n",calcularMultiplicacion(primerOperador,segundoOperador));
-            printf("El factorial de A! es: %d y El factorial de B! es:%d",factorialPrimerOperador(primerOperador),factorialSegundoOperador(segundoOperador));
+           if(primerOperador <0 || segundoOperador < 0){
+                printf("No se puede realizar factorial de un numero negativo.");
+           }
+           else{
+                printf("El factorial de A! es: %d y El factorial de B! es: %d",factorialPrimerOperador(primerOperador),factorialSegundoOperador(segundoOperador));
+           }
+
         }
         else{
             printf("Para Mostrar los resultados primero tiene que calcular...");

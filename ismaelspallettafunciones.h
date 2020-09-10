@@ -1,6 +1,7 @@
 #ifndef ISMAELSPALLETTAFUNCIONES_H_INCLUDED
 #define ISMAELSPALLETTAFUNCIONES_H_INCLUDED
 
+
 #endif // ISMAELSPALLETTAFUNCIONES_H_INCLUDED
 
 /** \brief Calcula la suma de dos enteros
@@ -49,7 +50,8 @@
 * \param
 * \return faltaroal de entero
 *
-*/ int factorialSegundoOperador(int segundoOperador);
+*/int factorialSegundoOperador(int segundoOperador);
 //------------------------------------------------------------------------------------------
+
 
 
