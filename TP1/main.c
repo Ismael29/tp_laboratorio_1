@@ -17,7 +17,7 @@ int main()
 
     do{
     system("cls");
-    printf("\n***CALCULADORA UTN***\n");
+    printf("\n***CALCULADORA UTN TP1***\n");
     printf("\n 1.   Ingresar 1er operador. (A=%d)\n",primerOperador);
     printf("\n 2.   Ingresar 2do operador. (B=%d)\n",segundoOperador);      // menu para seleccionar opciones
     printf("\n 3.   Calcular todas las operaciones.\n");
@@ -93,18 +93,15 @@ int main()
            else{
                 printf("El factorial de A! es: %d y El factorial de B! es: %d\n",factorialPrimerOperador(primerOperador),factorialSegundoOperador(segundoOperador));
            }
-
         }
         else{
             printf("Para Mostrar los resultados primero tiene que calcular...\n");
-
         }
         system("PAUSE");
         break;
     case '5':
         printf("Esta saliendo de la calculadora...\n");
         system("PAUSE");
-
         break;
     default:
             printf("Opcion Invalida!!!\n\n");

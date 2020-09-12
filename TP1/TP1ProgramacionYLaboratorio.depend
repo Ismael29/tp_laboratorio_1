@@ -22,3 +22,16 @@
 	<inttypes.h>
 	"ismaelspallettafunciones.h"
 
+1599868614 source:c:\users\isma\desktop\tp1programacionylaboratorio\tp1\ismaelspallettafunciones.c
+	"ismaelspallettafunciones.h"
+
+1599868613 c:\users\isma\desktop\tp1programacionylaboratorio\tp1\ismaelspallettafunciones.h
+
+1599870296 source:c:\users\isma\desktop\tp1programacionylaboratorio\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctype.h>
+	<inttypes.h>
+	"ismaelspallettafunciones.h"
+
