@@ -1,5 +1,6 @@
 #include "ismaelspallettafunciones.h"
 
+
 int calcularSuma(int primerOperador,int segundoOperador){
     int suma;
     suma=primerOperador+segundoOperador;
@@ -38,3 +39,5 @@ int factorialSegundoOperador(int segundoOperador){
     }
     return factorial;
 }
+
+
