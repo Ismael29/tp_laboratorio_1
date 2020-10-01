@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1601593363 source:c:\users\isma\desktop\c\practicasenc\clase10\tp2programacionylaboratorio\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+
+1601590964 source:c:\users\isma\desktop\c\practicasenc\clase10\tp2programacionylaboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+
+1601593361 c:\users\isma\desktop\c\practicasenc\clase10\tp2programacionylaboratorio\arrayemployees.h
+
