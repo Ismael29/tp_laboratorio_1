@@ -16,3 +16,20 @@
 
 1601593361 c:\users\isma\desktop\c\practicasenc\clase10\tp2programacionylaboratorio\arrayemployees.h
 
+1601607220 source:c:\users\isma\desktop\programacionylaboratorio\tp2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+
+1601606092 c:\users\isma\desktop\programacionylaboratorio\tp2\arrayemployees.h
+
+1601606089 source:c:\users\isma\desktop\programacionylaboratorio\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+

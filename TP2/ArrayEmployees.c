@@ -5,12 +5,10 @@
 #include <conio.h>
 #include <string.h>
 
-
 int menu()
 {
     int opcion;
 
-    // system("cls");
     printf("* * * Sistema ABM UTN TP2 * * *\n\n\n");
     printf("1) ALTAS.\n\n");
     printf("2) MODIFICAR.\n\n");
@@ -46,6 +44,7 @@ int initEmployees(Employee employeeList[], int len)
 
 int enterAddEmployee(Employee employeeList[],int len,int id)
 {
+    int answerScanner;
     int error=-1;
 
     Employee auxEmployee;
@@ -58,26 +57,28 @@ int enterAddEmployee(Employee employeeList[],int len,int id)
     fflush(stdin);
     gets(auxEmployee.lastName);
 
+
     printf("Ingrese Sueldo: ");
     fflush(stdin);
-    scanf("%f",&auxEmployee.salary);
+    answerScanner=scanf("%f",&auxEmployee.salary);
 
-    while(auxEmployee.salary<0)
+    while(auxEmployee.salary<0 || answerScanner==0)
     {
         printf("Error...Sueldo no valido ingrese nuevamente");
-        printf("Ingrese Sueldo: ");
+        printf("\n\nIngrese Sueldo: ");
         fflush(stdin);
-        scanf("%f",&auxEmployee.salary);
+        answerScanner=scanf("%f",&auxEmployee.salary);
     }
 
     printf("Ingrese sector: ");
-    scanf("%d",&auxEmployee.sector);
-    while(auxEmployee.sector<0)
+    fflush(stdin);
+    answerScanner=scanf("%d",&auxEmployee.sector);
+    while(auxEmployee.sector<0 || answerScanner==0)
     {
         printf("Error...Sector no valido ingrese nuevamente!!\n\n");
         printf("Ingrese sector: ");
         fflush(stdin);
-        scanf("%d",&auxEmployee.sector);
+        answerScanner=scanf("%d",&auxEmployee.sector);
     }
     auxEmployee.id=id;
     if(addEmployee(employeeList,len,auxEmployee.id,auxEmployee.name,auxEmployee.lastName,auxEmployee.salary,auxEmployee.sector)==0)
@@ -242,8 +243,8 @@ int printEmployees(Employee employeeList[], int length)
     int flag=0;
     if(employeeList!=NULL && length>0)
     {
-        printf("\n\n ID      Name     LastName     Salary     Sector     IsEmpty \n\n ");
-        printf("-------------------------------------------------------------\n\n ");
+        printf("\n\n ID      Nombre     Apellido     Salario     Sector     IsEmpty \n\n ");
+        printf("---------------------------------------------------------------\n\n ");
         for( int i = 0 ; i < length ; i++ )
         {
             if(employeeList[i].isEmpty ==0)
@@ -254,7 +255,7 @@ int printEmployees(Employee employeeList[], int length)
         }
         if(flag == 0)
         {
-            printf("No Employees in the list. \n\n");
+            printf("No existen empleados todavia... \n\n");
         }
     }
     return 0;
@@ -262,17 +263,18 @@ int printEmployees(Employee employeeList[], int length)
 
 void printEmployee(Employee anEmployee)
 {
-    printf("\n%d    %s    %s    %.2f      %d          %d \n\n",anEmployee.id,anEmployee.name,anEmployee.lastName,anEmployee.salary,anEmployee.sector,anEmployee.isEmpty);
+    printf("\n%d     %s     %s     %.2f       %d           %d \n\n",anEmployee.id,anEmployee.name,anEmployee.lastName,anEmployee.salary,anEmployee.sector,anEmployee.isEmpty);
 }
 
 int modifyEmployee(Employee employeeList[], int len)
 {
+    int answerScann;
     int error=-1;
     int indice;
     int id=1;
     char confirma;
     Employee newEmployee;
-    if(employeeList!= NULL && len > 0 && id > 0 )       // el problema es el if
+    if(employeeList!= NULL && len > 0 && id > 0 )
     {
         system("cls");
         printf("*** Modificar Empleado***");
@@ -290,15 +292,12 @@ int modifyEmployee(Employee employeeList[], int len)
         {
             system("cls");
             printEmployee(employeeList[indice]);
-            //aca ba un sub menu para que el usuario elija que modificar
-
             printf("Que Quiere Modificar?\n");
             switch(subMenu())
             {
             case 1:
                 fflush(stdin);
                 printf("Ingrese nuevo Nombre:  ");
-                //scanf("%s",&newEmployee.name);
                 gets(newEmployee.name);
                 printName(newEmployee);
                 printf("Confirma nuevo Nombre: ??\n");
@@ -307,7 +306,6 @@ int modifyEmployee(Employee employeeList[], int len)
                 if(confirma =='s')
                 {
                     strcpy(employeeList[indice].name,newEmployee.name);
-                    //employeeList[indice].name=newEmployee.name;
                     error=0;
 
                 }
@@ -317,9 +315,9 @@ int modifyEmployee(Employee employeeList[], int len)
                 }
                 break;
             case 2:
+                system("cls");
                 fflush(stdin);
                 printf("Ingrese nuevo Apellido:  ");
-                //scanf("%s",&newEmployee.lastName);
                 gets(newEmployee.lastName);
                 printLastName(newEmployee);
                 printf("Confirma nuevo Apellido: ??\n");
@@ -336,9 +334,16 @@ int modifyEmployee(Employee employeeList[], int len)
                 }
                 break;
             case 3:
-                printf("Ingrese nuevo Salario:  ");
-                scanf("%f",&newEmployee.salary);
-                printSalary(newEmployee);
+                do
+                {
+                    printf("Ingrese nuevo Salario:  ");
+                    fflush(stdin);
+                    answerScann=scanf("%f",&newEmployee.salary);
+                    printSalary(newEmployee);
+
+                }
+                while(answerScann==0);
+
                 printf("Confirma nuevo Salario: ??\n");
                 fflush(stdin);
                 scanf("%c", &confirma);
@@ -370,7 +375,6 @@ int modifyEmployee(Employee employeeList[], int len)
                 }
                 break;
             }
-
         }
     }
     return error;
@@ -413,42 +417,41 @@ void printSector(Employee employeeSector)
     printf("Sector: %d \n",employeeSector.sector);
 }
 
-void salaryEmployee(Employee employeeList[],int len,int id)
+void printSalaryFull(Employee employeeList[],int len)
 {
-    Employee auxEmployee;
-    int contadorDeSalarios=0;
-    float salarioTotal=0;
-    int salariosAltos=0;
-    for( int i=0; i<len ; i++ )
+    float totalSalary=0;
+    float averageSalary=0;
+    int countEmployee=0;
+    int employeeMoreThanAverage=0;
+
+    for(int i = 0 ; i < len ; i++)
     {
-        auxEmployee.salary=auxEmployee.salary+employeeList[i].salary;
-    }
-    for(int j=0; j<id; j++)
-    {
-        contadorDeSalarios++;
-    }
-    salarioTotal=(auxEmployee.salary/contadorDeSalarios);
-    for(int a =0 ; a < id ; a++)
-    {
-        if(employeeList[a].salary>salarioTotal)
+        if(employeeList[i].isEmpty==0)
         {
-            salariosAltos++;
+            totalSalary=totalSalary+employeeList[i].salary;
+            countEmployee++;
         }
     }
-    printf("El total de los salarios es: %.2f \n",auxEmployee.salary);
-    printf("El promedio de los salarios es: %.2f \n",salarioTotal);
-    printf("El total de los salarios que superan el salario promedio son: %d \n",salariosAltos);
-}
+    averageSalary=totalSalary/countEmployee;
 
-void printTotalSalary(Employee employeeList[],int len)
-{
-    Employee auxEmployee;
-
-    for( int i=0; i<len ; i++ )
+    for(int i =0; i<len; i++)
     {
-        auxEmployee.salary=auxEmployee.salary+employeeList[i].salary;
+        if(employeeList[i].isEmpty==0)
+        {
+            if(employeeList[i].salary>averageSalary)
+            {
+                employeeMoreThanAverage++;
+            }
+            else
+            {
+                printf("\nNo hay empleados con un sueldo superior al promedio de los mismos...\n");
+            }
+        }
     }
-    printf("El total de los salarios es: %f \n",auxEmployee.salary);
+    printf("La suma total de los sueldos es: %.2f \n\n",totalSalary);
+    printf("El promedio del salario es: %.2f  \n\n",averageSalary);
+    printf("El numero de empleados que gana mas que el promedio es: %d  \n\n",employeeMoreThanAverage);
 }
+
 
 

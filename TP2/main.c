@@ -4,10 +4,12 @@
 #include <conio.h>
 #include "ArrayEmployees.h"
 
-
 #define LEN 1000
-
-
+/*
+Ismael ignacio spalletta , Com 1A.
+Todas las funciones y variables estan escritas en ingles para respetar como fueron entregados los prototipos (todos en ingles).
+Las funciones con punteros fueron modificadas para no utilizarlas ya que en nuestro curso se explica luego del primer parcial.
+*/
 int main()
 {
     int nextIdOfEmployee=0;
@@ -15,17 +17,7 @@ int main()
     int continueWithLoop=5;
     char confirm;
     Employee employeeList[LEN];
-    /*
-    {
-        {1000,"a","a",1000,1,0},
-        {1001,"b","b",1000,2,0},
-        {1002,"c","c",1000,3,0},
-        {1003,"d","d",1000,4,0},
-        {1004,"e","e",1000,5,0},
-    };
-    */
     int flagEmployeeExist=0;
-
 
     if(initEmployees(employeeList,LEN)==0)
     {
@@ -38,6 +30,8 @@ int main()
     }
     do
     {
+        system("PAUSE");
+        system("cls");
         switch(menu())
         {
         case 1:
@@ -97,20 +91,20 @@ int main()
                 {
                     printf("El usuario cancelo la accion!!\n\n");
                 }
-                break;
             }
             else
             {
                 printf("Para dar de baja un empleado primero debe existir uno!!\n\n\n");
             }
+            break;
         case 4:
             system("cls");
             sortEmployees(employeeList,LEN,1);  // ordena priorizando el sector sobre el apellido, luego si el sector es el mismo por el apellido, cambiando 0 y 1 se cambia el orden del ordenamiento
             printEmployees(employeeList,LEN);
-            //salaryEmployee(employeeList,LEN,nextIdOfEmployee);
-            //printTotalSalary(employeeList,LEN);
+            printSalaryFull(employeeList,LEN);
             break;
         case 5:
+            system("cls");
             printf("Seguro que quiere salir?:\n ");
             fflush(stdin);
             scanf("%c", &confirm);
@@ -119,7 +113,6 @@ int main()
             {
                 continueWithLoop = 'n';
             }
-            break;
             break;
         }
     }

@@ -101,7 +101,7 @@ free space] - (0) if Ok
  *
  * \param an employee type Employee
  *
- * \return
+ * \return un entero para validar condicion
  *
  */void printEmployee(Employee anEmployee);
 
@@ -109,7 +109,7 @@ free space] - (0) if Ok
   *
   * \param lista de empleados de tipo empleado
   * \param tamaño
-  * \return
+  * \return un entero para validar una condicion
   *
   */int searchForSpace(Employee employeeList[],int len);
 
@@ -117,43 +117,43 @@ free space] - (0) if Ok
  *
  * \param lista de empleados de tipo empleado
  * \param tamaño
- * \return
+ * \return un entero para validar una condicion
  *
  */int removeEmployee1(Employee employeeList[],int len);
 
- /** \brief
+ /** \brief da de alta a un empleado
   *
-  * \param
-  * \param
-  * \return
+  * \param lista de empleados de tipo empleado
+  * \param entero de tamaño
+  * \return un entero para validar una condicion
   *
   */int enterAddEmployee(Employee employeeList[],int len,int id);
 
-/** \brief
+/** \brief modifica un campo de  un empleado a gusto bajo condicines
  *
- * \param
- * \param
- * \return
+ * \param lista de empleados de tipo empleado
+ * \param entero de tamaño
+ * \return un entero para validar una condicion
  *
  */ int modifyEmployee(Employee employeeList[], int len);
 
-/** \brief
+/** \brief sub menu grafico para seleccionar opciones
  *
- * \param
- * \param
- * \return
+ * \param ---
+ * \param ---
+ * \return entero de la opcion elegida
  *
  */ int subMenu();
 
- /** \brief
+ /** \brief imprime nombre
   *
-  * \param
-  * \param
-  * \return
+  * \param nombre de tipo Employee
+  * \param ---
+  * \return ---
   *
   */ void printName(Employee name);
 
-/** \brief
+/** \brief imprime apellido
  *
  * \param employeeLastName Employee
  * \return void
@@ -161,7 +161,7 @@ free space] - (0) if Ok
  */void printLastName(Employee employeeLastName);
 
 
-/** \brief
+/** \brief imprime salario
  *
  * \param employeeSalary Employee
  * \return void
@@ -169,20 +169,25 @@ free space] - (0) if Ok
  */void printSalary(Employee employeeSalary);
 
 
-/** \brief
+/** \brief imprime sector
  *
- * \param
+ * \param Employee employeeSector
  *
- * \return
+ * \return ---
  *
  */void printSector(Employee employeeSector);
 
 
+/** \brief imprime el salario completo , promedio y si hay algun empleado que gane mas que el promedio
+ *
+ * \param employeeList[] Employee
+ * \param len int
+ * \return void
+ *
+ */void printSalaryFull(Employee employeeList[],int len);
 
 
 
-void salaryEmployee(Employee employeeList[],int len,int id);
-void printTotalSalary(Employee employeeList[],int len);
 
 
 
