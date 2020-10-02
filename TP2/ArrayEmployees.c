@@ -180,9 +180,10 @@ int removeEmployee(Employee employeeList[], int len,int id) //0 baja exitosa, 1 
         else
         {
             printEmployee(employeeList[index]);
-            printf("Confirma baja?: ");
+            printf("Confirma baja? s / n: ");
             fflush(stdin);
             scanf("%c",&confirm);
+            confirm=tolower(confirm);
             if(confirm=='s')
             {
                 employeeList[index].isEmpty=1;
@@ -280,7 +281,14 @@ int modifyEmployee(Employee employeeList[], int len)
         printf("*** Modificar Empleado***");
         printEmployees(employeeList,len);
         printf("Ingrese ID: ");
-        scanf("%d",&id);
+        answerScann=scanf("%d",&id);
+        while(answerScann==0)
+        {
+            printf("Error...Solo numeros\n");
+            printf("Ingrese ID: ");
+            fflush(stdin);
+            answerScann=scanf("%d",&id);
+        }
 
         indice=findEmployeeById(employeeList,len,id);
 
@@ -303,6 +311,7 @@ int modifyEmployee(Employee employeeList[], int len)
                 printf("Confirma nuevo Nombre: ??\n");
                 fflush(stdin);
                 scanf("%c",&confirma);
+                confirma=tolower(confirma);
                 if(confirma =='s')
                 {
                     strcpy(employeeList[indice].name,newEmployee.name);
@@ -323,6 +332,7 @@ int modifyEmployee(Employee employeeList[], int len)
                 printf("Confirma nuevo Apellido: ??\n");
                 fflush(stdin);
                 scanf("%c", &confirma);
+                confirma=tolower(confirma);
                 if(confirma =='s')
                 {
                     strcpy(employeeList[indice].lastName,newEmployee.lastName);
@@ -347,6 +357,7 @@ int modifyEmployee(Employee employeeList[], int len)
                 printf("Confirma nuevo Salario: ??\n");
                 fflush(stdin);
                 scanf("%c", &confirma);
+                confirma=tolower(confirma);
                 if(confirma =='s')
                 {
                     employeeList[indice].salary=newEmployee.salary;
@@ -364,6 +375,7 @@ int modifyEmployee(Employee employeeList[], int len)
                 printf("Confirma nuevo Sector: ??\n");
                 fflush(stdin);
                 scanf("%c",&confirma);
+                confirma=tolower(confirma);
                 if(confirma =='s')
                 {
                     employeeList[indice].sector=newEmployee.sector;
@@ -448,9 +460,9 @@ void printSalaryFull(Employee employeeList[],int len)
             }
         }
     }
-    printf("La suma total de los sueldos es: %.2f \n\n",totalSalary);
-    printf("El promedio del salario es: %.2f  \n\n",averageSalary);
-    printf("El numero de empleados que gana mas que el promedio es: %d  \n\n",employeeMoreThanAverage);
+    printf("\nLa suma total de los sueldos es: %.2f \n\n",totalSalary);
+    printf("\nEl promedio del salario es: %.2f  \n\n",averageSalary);
+    printf("\nEl numero de empleados que gana mas que el promedio es: %d  \n\n",employeeMoreThanAverage);
 }
 
 

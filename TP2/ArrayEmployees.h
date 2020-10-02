@@ -14,7 +14,7 @@
  */int menu();
 
 
-/** \brief estructura de tupo Employe
+/** \brief estructura de tipo Employe
  *
  * \param numero enterdo
  * \param nombre
