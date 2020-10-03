@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <conio.h>
 #include <string.h>
+#define NAME 51
 
 int menu()
 {
@@ -46,17 +47,25 @@ int enterAddEmployee(Employee employeeList[],int len,int id)
 {
     int answerScanner;
     int error=-1;
-
     Employee auxEmployee;
+    int validation;
 
-    printf("Ingrese Nombre: ");
-    fflush(stdin);
-    gets(auxEmployee.name);
+    do
+    {
+        printf("Ingrese Nombre: ");
+        scanf("%s",auxEmployee.name);
+        validation=stringValidation(auxEmployee.name);
+    }
+    while(validation==0);
 
-    printf("Ingrese Apellido: ");
-    fflush(stdin);
-    gets(auxEmployee.lastName);
-
+    do
+    {
+        printf("Ingrese Apellido: ");
+        fflush(stdin);
+        scanf("%s",auxEmployee.lastName);
+        validation=stringValidation(auxEmployee.lastName);
+    }
+    while(validation==0);
 
     printf("Ingrese Sueldo: ");
     fflush(stdin);
@@ -274,6 +283,7 @@ int modifyEmployee(Employee employeeList[], int len)
     int indice;
     int id=1;
     char confirma;
+    int validation;
     Employee newEmployee;
     if(employeeList!= NULL && len > 0 && id > 0 )
     {
@@ -305,10 +315,15 @@ int modifyEmployee(Employee employeeList[], int len)
             {
             case 1:
                 fflush(stdin);
-                printf("Ingrese nuevo Nombre:  ");
-                gets(newEmployee.name);
+                do
+                {
+                    printf("Ingrese Nuevo Nombre: ");
+                    scanf("%s",newEmployee.name);
+                    validation=stringValidation(newEmployee.name);
+
+                }while(validation==0);
                 printName(newEmployee);
-                printf("Confirma nuevo Nombre: ??\n");
+                printf("Confirma nuevo Nombre: ?? s/n \n");
                 fflush(stdin);
                 scanf("%c",&confirma);
                 confirma=tolower(confirma);
@@ -324,12 +339,17 @@ int modifyEmployee(Employee employeeList[], int len)
                 }
                 break;
             case 2:
-                system("cls");
                 fflush(stdin);
-                printf("Ingrese nuevo Apellido:  ");
-                gets(newEmployee.lastName);
+                do
+                {
+                    printf("Ingrese Nuevo Apellido: ");
+                    scanf("%s",newEmployee.lastName);
+                    validation=stringValidation(newEmployee.lastName);
+
+                }while(validation==0);
+
                 printLastName(newEmployee);
-                printf("Confirma nuevo Apellido: ??\n");
+                printf("Confirma nuevo Apellido: ?? s/n \n");
                 fflush(stdin);
                 scanf("%c", &confirma);
                 confirma=tolower(confirma);
@@ -465,5 +485,18 @@ void printSalaryFull(Employee employeeList[],int len)
     printf("\nEl numero de empleados que gana mas que el promedio es: %d  \n\n",employeeMoreThanAverage);
 }
 
+int stringValidation(char name[])
+{
+
+    for(int i=0 ; i<strlen(name); i++)
+    {
+        if(!((name[i]>=65 && name[i]<=90) || (name[i]>=97 && name[i]<=122)))
+        {
+            printf("Solo ingresa letras!!\n");
+            return 0;
+        }
+    }
+    return 1;
+}
 
 

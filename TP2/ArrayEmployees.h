@@ -186,7 +186,13 @@ free space] - (0) if Ok
  *
  */void printSalaryFull(Employee employeeList[],int len);
 
-
+/** \brief verifica si la cadena ingresada tiene un numero , o si es un numero
+ *
+ * \param name[] char
+ * \return un int representando si la funcion dio error o no para validar
+ *
+ */
+int stringValidation(char name[]);
 
 
 
