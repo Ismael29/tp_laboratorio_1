@@ -99,13 +99,13 @@ int main()
             break;
         case 4:
             system("cls");
-            sortEmployees(employeeList,LEN,1);  // ordena priorizando el sector sobre el apellido, luego si el sector es el mismo por el apellido, cambiando 0 y 1 se cambia el orden del ordenamiento
+            sortEmployees(employeeList,LEN,0);  // ordena priorizando el sector sobre el apellido, luego si el sector es el mismo por el apellido, cambiando 0 y 1 se cambia el orden del ordenamiento
             printEmployees(employeeList,LEN);
             printSalaryFull(employeeList,LEN);
             break;
         case 5:
             system("cls");
-            printf("Seguro que quiere salir?:\n ");
+            printf("Seguro que quiere salir?: s/n \n ");
             fflush(stdin);
             scanf("%c", &confirm);
             confirm = tolower(confirm);
