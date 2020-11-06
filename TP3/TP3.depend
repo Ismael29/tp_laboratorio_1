@@ -438,3 +438,68 @@
 	<conio.h>
 	"validaciones.h"
 
+1604697461 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"validaciones.h"
+	"parser.h"
+	<ctype.h>
+	<string.h>
+
+1604594865 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\linkedlist.h
+
+1604697461 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.h
+	"LinkedList.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1604677879 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"validaciones.h"
+
+1604677924 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1604594865 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\parser.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1604697461 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"validaciones.h"
+
+1604677952 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1604609492 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1604628580 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<conio.h>
+	"validaciones.h"
+

@@ -146,5 +146,5 @@ int employee_getId(Employee* this,int* id);
  * \param empB void*
  * \return int
  *
- */int compareEmployeesByName(void* empA,void* empB);
+ */int ordenarEmpleadosPorNombre(void* empA,void* empB);
 #endif // employee_H_INCLUDED

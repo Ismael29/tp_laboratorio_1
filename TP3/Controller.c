@@ -255,7 +255,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
         ordenCorrecto = utn_getNumero(&ordenamiento,"Ingrese De Que Forma Quiere Ordenar.\n 0. Ascendente\n 1. Descendete\n","Error!!. Ingrese 1 o 0.", 0, 1, 3);
         if (ordenCorrecto)
         {
-            ll_sort(pArrayListEmployee, compareEmployeesByName, ordenamiento);
+            ll_sort(pArrayListEmployee, ordenarEmpleadosPorNombre, ordenamiento);
         }
         else
         {

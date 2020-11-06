@@ -137,7 +137,7 @@ int mostrarEmpleado(Employee* this)
     return error;
 }
 
-int compareEmployeesByName(void* empA,void* empB)
+int ordenarEmpleadosPorNombre(void* empA,void* empB)
 {
     int orden = 0;
     if( empA != NULL && empB != NULL )
