@@ -62,7 +62,7 @@
  *
  */int controller_ListEmployee(LinkedList* pArrayListEmployee);
 
-/** \brief ordena los empleados segun un criterio
+/** \brief ordena los empleados por nombre seleccionando el criterio ascendente o descentdente
  *
  * \param pArrayListEmployee LinkedList*
  * \return int
