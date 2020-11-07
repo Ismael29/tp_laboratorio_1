@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include "validaciones.h"
+//Funciones obtenidas desde el classroom viendo los videos del profesor Davila.
+
 int strnlen1(const char *s, size_t maxlen)
 {
     size_t len;

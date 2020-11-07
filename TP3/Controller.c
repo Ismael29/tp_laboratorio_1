@@ -232,18 +232,46 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
     int ordenamiento;
     int ordenCorrecto = -1;
+    char continuar= 's';
+    ordenCorrecto = utn_getNumero(&ordenamiento,"Ingrese De Que Forma Quiere Ordenar.\n 0. Ascendente\n 1. Descendete\n","Error!!. Ingrese 1 o 0 Para Determinar Ordenamiento.\n", 0, 1, 3);
     if(pArrayListEmployee != NULL)
     {
-        ordenCorrecto = utn_getNumero(&ordenamiento,"Ingrese De Que Forma Quiere Ordenar.\n 0. Ascendente\n 1. Descendete\n","Error!!. Ingrese 1 o 0.", 0, 1, 3);
-        if (ordenCorrecto)
+        if(ordenCorrecto)
         {
-            ll_sort(pArrayListEmployee, ordenarEmpleadosPorNombre, ordenamiento);
-        }
-        else
-        {
-            printf("Error!! Ordenamiento Invalido!! Reintente.");
+            do
+            {
+                switch(menuDeOrdenamiento())
+                {
+                case 1:
+                    ll_sort(pArrayListEmployee, ordenarEmpleadosPorNombre, ordenamiento);
+                    printf("Empleados Ordenados!! \n");
+                    system("PAUSE");
+                    break;
+                case 2:
+                    ll_sort(pArrayListEmployee, ordenarEmpleadosPorId, ordenamiento);
+                    printf("Empleados Ordenados!! \n");
+                    system("PAUSE");
+                    break;
+                case 3:
+                    ll_sort(pArrayListEmployee, ordenarEmpleadosPorSueldo, ordenamiento);
+                    printf("Empleados Ordenados!! \n");
+                    system("PAUSE");
+                    break;
+                case 4:
+                    ll_sort(pArrayListEmployee, ordenarEmpleadosPorHorasTrabajadas, ordenamiento);
+                    printf("Empleados Ordenados!! \n");
+                    system("PAUSE");
+                    break;
+                case 5:
+                    continuar = 'n';
+                    printf("Volviendo Al Menu Principal...\n");
+                    break;
+                }
+            }
+            while(continuar=='s');
         }
     }
+
     return ordenCorrecto;
 }
 
@@ -314,7 +342,7 @@ int actualizarId(int id)
     int proximoId =id;
     proximoId++;
     FILE* f;
-    f = fopen("proximoid.bin","wb"); // en el caso que el primer id no sia 1001 borrar el proximo id.bin asi se resetea !
+    f = fopen("proximoid.bin","wb"); // en el caso que el primer id no sea 1001 borrar el proximoId.bin asi se resetea !
 
     if(f != NULL)
     {

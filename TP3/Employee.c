@@ -31,7 +31,7 @@ int employee_setId(Employee* this,int id)
 {
     int error = -1;
 
-    if(this != NULL && id >0 && id <= 10000)
+    if(this != NULL && id >0 && id <= 5000)
     {
         this-> id = id;
         error = 1;
@@ -100,7 +100,7 @@ int employee_setSueldo(Employee* this, int sueldo)
 {
     int error = -1;
 
-    if(this != NULL && sueldo >0 && sueldo <= 200000 )
+    if(this != NULL && sueldo >0 && sueldo <= 100000 )
     {
         this-> sueldo = sueldo;
         error = 1;
@@ -201,7 +201,7 @@ int modificarEmpleado(Employee* this)
             }
             break;
         case 2:
-            nuevasHorasTrabajadas = utn_getNumero(&horasTrabajadas, "Ingrese Cantidad Nueva De Horas Trabajadas: ","Error!! La Cantidad De Horas Tiene Que Ser Entre 1 Y 2000.\n",1,2000,3);
+            nuevasHorasTrabajadas = utn_getNumero(&horasTrabajadas, "Ingrese Cantidad Nueva De Horas Trabajadas: ","Error!! La Cantidad De Horas Tiene Que Ser Entre 1 Y 1000.\n",1,1000,3);
             if (nuevasHorasTrabajadas ==1)
             {
                 employee_setHorasTrabajadas(this, horasTrabajadas);
@@ -229,6 +229,7 @@ int modificarEmpleado(Employee* this)
         }
     }
     while(continuar=='s');
+
 
     return error;
 }
@@ -298,6 +299,78 @@ int menu()
         opcion = 0;
     }
     return opcion;
+}
+int menuDeOrdenamiento()
+{
+    int opcion;
+    system("cls");
+    printf("\n****** Sub Menu De Ordenamiento De Empleado ****** \n");
+    printf("-------------------------------------------------------");
+    printf("\n1.  Ordenar Por Nombre.\n");
+    printf("2.  Ordenar Por ID.\n");
+    printf("3.  Ordenar Por Sueldo.\n");
+    printf("4.  Ordenar Por Horas Trabajadas.\n");
+    printf("5.  Salir.\n");
+
+    if(utn_getNumero(&opcion,"Ingrese opcion:  ","",1,5,0) == -1)
+    {
+        opcion = 0;
+    }
+    return opcion;
+}
+int ordenarEmpleadosPorId(void* empleado1, void* empleado2){
+
+    Employee* emp1=(Employee*) empleado1;
+    Employee* emp2=(Employee*) empleado2;
+    int orden;
+    if(emp1!=NULL && emp2!=NULL){
+        if(emp1->id == emp2->id){
+            orden=0;
+        }else{
+            if(emp1->id > emp2->id){
+                orden=-1;
+            }else{
+                orden=1;
+            }
+        }
+    }
+    return orden;
+}
+int ordenarEmpleadosPorSueldo(void* empleado1, void* empleado2){
+
+    Employee* emp1=(Employee*) empleado1;
+    Employee* emp2=(Employee*) empleado2;
+    int orden;
+    if(emp1!=NULL && emp2!=NULL){
+        if(emp1->sueldo == emp2->sueldo){
+            orden=0;
+        }else{
+            if(emp1->sueldo > emp2->sueldo){
+                orden=-1;
+            }else{
+                orden=1;
+            }
+        }
+    }
+    return orden;
+}
+int ordenarEmpleadosPorHorasTrabajadas(void* empleado1, void* empleado2){
+
+    Employee* emp1=(Employee*) empleado1;
+    Employee* emp2=(Employee*) empleado2;
+    int orden;
+    if(emp1!=NULL && emp2!=NULL){
+        if(emp1->horasTrabajadas == emp2->horasTrabajadas){
+            orden=0;
+        }else{
+            if(emp1->horasTrabajadas > emp2->horasTrabajadas){
+                orden=-1;
+            }else{
+                orden=1;
+            }
+        }
+    }
+    return orden;
 }
 
 

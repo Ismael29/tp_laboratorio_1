@@ -438,7 +438,7 @@
 	<conio.h>
 	"validaciones.h"
 
-1604770696 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.c
+1604774482 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -451,7 +451,7 @@
 
 1604769430 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\linkedlist.h
 
-1604770747 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.h
+1604772991 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.h
 	"LinkedList.h"
 	<stdlib.h>
 	<string.h>
@@ -464,7 +464,7 @@
 	"Employee.h"
 	"validaciones.h"
 
-1604769430 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.h
+1604774070 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.h
 	<string.h>
 	<stdlib.h>
 	<stdio.h>
@@ -474,14 +474,15 @@
 	<string.h>
 	<stdio.h>
 
-1604770696 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.c
+1604773960 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 	"Employee.h"
 	"validaciones.h"
 
-1604769537 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\main.c
+1604774144 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -495,10 +496,26 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1604769430 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.c
+1604773250 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\validaciones.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 	<conio.h>
 	"validaciones.h"
+
+1604773605 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1604773668 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
 

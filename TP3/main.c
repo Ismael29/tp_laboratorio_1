@@ -5,7 +5,6 @@
 #include "Controller.h"
 #include "Employee.h"
 //ismael ignacio spalletta 1A Segundo Cuatrimestre 2020 TP3
-
 int main()
 {
     char seguir='s';
@@ -34,6 +33,7 @@ int main()
             else
             {
                 printf("La Lista De Empleados Esta Vacia!! Primero Cargue Un Empleado. \n");
+                system("PAUSE");
             }
             break;
         case 5:
@@ -55,7 +55,6 @@ int main()
             if(!ll_isEmpty(listaEmpleados))
             {
                 controller_sortEmployee(listaEmpleados);
-                printf("Empleados Ordenados!! \n");
             }
             else
             {
@@ -101,7 +100,7 @@ int main()
                 seguir='n';
             }
             break;
-            fflush(stdout);
+            fflush(stdin);
         }
     }while(seguir=='s');
     ll_deleteLinkedList(listaEmpleados);

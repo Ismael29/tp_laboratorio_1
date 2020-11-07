@@ -41,7 +41,13 @@ typedef struct
  *
  */int employee_setId(Employee* this,int id);
 
-int employee_getId(Employee* this,int* id);
+/** \brief obtiene un id
+ *
+ * \param this Employee*
+ * \param id int*
+ * \return int
+ *
+ */int employee_getId(Employee* this,int* id);
 
 /** \brief asigna un nombre
  *
@@ -140,11 +146,42 @@ int employee_getId(Employee* this,int* id);
   * \return int
   *
   */int menuDeModificacion();
-/** \brief compara nombres de empleado y aplica sort
+
+/** \brief compara nombres de empleado y aplica ordenamiento
  *
  * \param empA void*
  * \param empB void*
  * \return int
  *
  */int ordenarEmpleadosPorNombre(void* empA,void* empB);
+
+ /** \brief compara id y aplica ordenamiento
+  *
+  * \param empleado1 void*
+  * \param empleado2 void*
+  * \return int
+  *
+  */int ordenarEmpleadosPorId(void* empleado1, void* empleado2);
+
+ /** \brief menu de ordenamiento (eolegir por que criterio ordenar)
+  *
+  * \return int
+  *
+  */int menuDeOrdenamiento();
+
+ /** \brief ordena empleados por sueldo
+  *
+  * \param empleado1 void*
+  * \param empleado2 void*
+  * \return int
+  *
+  */int ordenarEmpleadosPorSueldo(void* empleado1, void* empleado2);
+
+ /** \brief  ordena empleados por horas trabajadas
+  *
+  * \param empleado1 void*
+  * \param empleado2 void*
+  * \return int
+  *
+  */int ordenarEmpleadosPorHorasTrabajadas(void* empleado1, void* empleado2);
 #endif // employee_H_INCLUDED
