@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "Employee.h"
 #include "validaciones.h"
 
@@ -195,7 +196,7 @@ int modificarEmpleado(Employee* this)
             if (nuevoNombre== 1)
             {
                 employee_setNombre(this, nombre);
-                modificacionSinError(this);
+                confirmacionDeModificacion(this);
                 error = 1;
             }
             break;
@@ -204,7 +205,7 @@ int modificarEmpleado(Employee* this)
             if (nuevasHorasTrabajadas ==1)
             {
                 employee_setHorasTrabajadas(this, horasTrabajadas);
-                modificacionSinError(this);
+                confirmacionDeModificacion(this);
                 error = 1;
             }
             break;
@@ -213,12 +214,14 @@ int modificarEmpleado(Employee* this)
             if(nuevoSueldo == 1)
             {
                 employee_setSueldo(this, sueldo);
-                modificacionSinError(this);
+                confirmacionDeModificacion(this);
                 error = 1;
             }
             break;
         case 4:
             continuar = 'n';
+            printf("Volviendo Al Menu Principal...\n");
+            system("PAUSE");
             break;
         case 0:
             printf("\nError!! Opcion Invalida!!\n");
@@ -230,13 +233,26 @@ int modificarEmpleado(Employee* this)
     return error;
 }
 
-void modificacionSinError(Employee* this)
+void confirmacionDeModificacion(Employee* this)
 {
-    printf("Se Modifico Empleado Correctamente!!\n\n");
+    char confirma;
+
     printf("\n  ID                Nombre  Horas Trabajadas          Sueldo \n");
     printf("--------------------------------------------------------------------------\n");
     mostrarEmpleado(this);
-    system("PAUSE");
+    printf("\n\n Confirma Modificacion??  (s/n) ");
+    fflush(stdin);
+    scanf("%c", &confirma);
+    if(tolower(confirma) == 's')
+    {
+        printf("Empleado Modificado!!\n");
+        system("PAUSE");
+    }
+    else
+    {
+        printf("Modificacion Cancelada Por El Usuario!! \n");
+        system("PAUSE");
+    }
 }
 
 int buscarEmpleadoPoriD(LinkedList* pArrayListEmployee, int id)

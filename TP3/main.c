@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
@@ -36,7 +35,6 @@ int main()
             {
                 printf("La Lista De Empleados Esta Vacia!! Primero Cargue Un Empleado. \n");
             }
-            system("PAUSE");
             break;
         case 5:
             controller_removeEmployee(listaEmpleados);

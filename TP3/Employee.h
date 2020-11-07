@@ -118,7 +118,7 @@ int employee_getId(Employee* this,int* id);
  *
  * \param puntero a un empleado del tipo Employee
  *
- */void modificacionSinError(Employee* this);
+ */void confirmacionDeModificacion(Employee* this);
 
 
 /** \brief busca en la lista el empleado que posea el id recibido por parametro y devuelve su indice

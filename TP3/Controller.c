@@ -122,7 +122,6 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int id;
     int indice;
     int idCorrecto;
-    char confirma;
 
     system("cls");
     if(pArrayListEmployee != NULL)
@@ -139,24 +138,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             }
             else
             {
-                system("cls");
-                printf("\nEmpleado A Modificar: \n\n");
-                printf("\n  ID                Nombre  Horas Trabajadas          Sueldo \n");
-                printf("------------------------------------------------------------------------\n");
-
-                mostrarEmpleado((Employee*) ll_get(pArrayListEmployee,indice));
-                printf("\n\n Seguro Quiere Modificar Este Empleado??  (s/n) ");
-                fflush(stdin);
-                scanf("%c", &confirma);
-                if (tolower(confirma) == 's')
-                {
-                    modificarEmpleado((Employee*) ll_get(pArrayListEmployee,indice));
-                    error = 1;
-                }
-                else
-                {
-                    printf("Modificacion Cancelada Por El Usuario!! \n");
-                }
+                modificarEmpleado((Employee*) ll_get(pArrayListEmployee,indice));
             }
         }
         else
