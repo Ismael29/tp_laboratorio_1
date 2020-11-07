@@ -9,7 +9,7 @@
  * \param int*
  * \return devuelve 1 si pudo conseguir el id del archivo y -1 si el archivo no existe
  *
- */int getIdFromArchive(int* id);
+ */int obtenerId(int* id);
 
 /** \brief Al id recibido por parametro le suma 1 y lo escribe en el archivo proximoId.bin
  *

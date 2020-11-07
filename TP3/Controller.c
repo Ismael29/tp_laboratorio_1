@@ -91,7 +91,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
         if(nuevoNombre&& nuevoHorasTrabajadas &&  nuevoSalario)
         {
-            getIdFromArchive(&id);
+            obtenerId(&id);
             strlwr(nombre);
             nombre[0]= toupper(nombre[0]);
             itoa(horasTrabajadas,horasTrabajadasString,10);
@@ -321,7 +321,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     return error;
 }
 
-int getIdFromArchive(int* id)
+int obtenerId(int* id)
 {
     int error = -1;
     FILE* f;

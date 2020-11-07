@@ -438,7 +438,7 @@
 	<conio.h>
 	"validaciones.h"
 
-1604774482 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.c
+1604774785 source:c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -457,7 +457,7 @@
 	<string.h>
 	<stdio.h>
 
-1604769430 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.h
+1604774775 c:\users\isma\desktop\nueva carpeta (2)\tp_laboratorio_1\tp3\controller.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
